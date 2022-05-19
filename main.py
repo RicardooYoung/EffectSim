@@ -27,11 +27,11 @@ for i in range(len(image_list)):
     image_path = raw_path + '/' + image_list[i]
     print('[{}/{}]Now processing {}.'.format(i + 1, len(image_list), image_name))
     start_time = time.time()
-    # print('|_Fog simulation started.')
-    # for j in range(len(visibility_sequence)):
-    #     parameter_set[4] = visibility_sequence[j]
-    #     fog.add_fog(image_path, image_name, fog_path, parameter_set, j)
-    # print('|_Fog simulation completed.')
+    print('|_Fog simulation started.')
+    for j in range(len(visibility_sequence)):
+        parameter_set[4] = visibility_sequence[j]
+        fog.add_fog(image_path, image_name, fog_path, parameter_set, j)
+    print('|_Fog simulation completed.')
     print('|_Rain simulation started.')
     rain.add_rain(image_name, image_path, rain_path, 2.0)
     print('|_Rain simulation completed.')
